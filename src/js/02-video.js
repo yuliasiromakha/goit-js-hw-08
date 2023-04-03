@@ -15,5 +15,3 @@ const storedTime = localStorage.getItem(currentTimeStorage);
 if (storedTime) {
   player.setCurrentTime(storedTime);
 }
-
-player.play();

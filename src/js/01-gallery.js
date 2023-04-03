@@ -29,25 +29,12 @@ const imagesRef = galleryItems.map(({ preview, original, description }) => {
 
 galleryRefs.innerHTML = imagesRef;
 
-galleryRefs.addEventListener('click', onGalleryClick)
 
-function onGalleryClick(event) {
-    event.preventDefault();
+const lightbox = new SimpleLightbox('.gallery a', { 
+ captionsData: 'alt',
+ captionsPosition: 'bottom',
+ captionsDelay: 250,
 
-    const currentItem = event.target;
-    if (currentItem.nodeName !== 'IMG') {
-        return;
-    }
-
-    const currentImg = event.target.dataset.source;
-
-    const lightbox = new SimpleLightbox('.gallery a', { 
-     captionsData: 'alt',
-     captionsPosition: 'bottom',
-     captionsDelay: 250,
-    
-    });
-
-}
+});
 
 console.log(galleryItems);
